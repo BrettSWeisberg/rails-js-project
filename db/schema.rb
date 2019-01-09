@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(version: 20181021200150) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "manager_id", default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "managers", force: :cascade do |t|

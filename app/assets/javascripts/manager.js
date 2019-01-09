@@ -58,6 +58,7 @@ function getProjects(data){
           `<button class="create_project" id="clientid-${client}">Create Projects</button><br><div id="create_project_form"></div>`;
         }
       }
+      debugger
       listenToCreateButton ()
     }
   })
@@ -72,39 +73,38 @@ function listenToCreateButton (){
 
 function createProjectForm(){
   document.getElementById("create_project_form").innerHTML =
-  '<form>' +
-    'Project Name:<input id="text_field"></input><br>' +
-    'Project Completed?:<select><option id="No">No</option><option id="Yes">Yes</option></select>' +
-  '</form>'+
-  '<button id="Submit_project">Submit</button>';
+  `<form>
+    Project Name:<input id="text_field"></input><br>
+    Project Completed?:<select><option id='no'>No</option><option id='yes'>Yes</option></select>
+  </form>
+  <button id="Submit_project">Submit</button>`;
   $("#Submit_project").on('click', function(event) {
     event.preventDefault();
-    createProject();
+  //  createProject();
 })
 }
-
-function createProject(){
-  client_data = {name: document.getElementById("text_field").value};
-  $.ajax({
-      type: 'Post',
-      url: base_url + `clients/${client}`,
-      data: JSON.stringify(client_data),
-      dataType: 'json'
-    });
-}
-
-
+//
+// function createProject(){
+//   client_data = {name: document.getElementById("text_field").value};
+//   $.ajax({
+//       type: 'Post',
+//       url: base_url + `clients/${client}`,
+//       data: JSON.stringify(client_data),
+//       dataType: 'json'
+//     });
+// }
+//
+//
 //   class Project {
-//     constructor(name, completed, client_id, manager_id){
+//     constructor(obj) {
 //       this.name = obj.name
+//       this.completed = obj.completed
 //     }
 //   }
 //
-//   Client.prototype.create = function() {
-//
+//   Client.prototype.postHTML = function() {
+//     return ('
+//     <h3>Project Name:${this.name}</h3><br>
+//     <h3>Completed:${this.name}</h3>
+//     ')
 //   }
-//
-//     User.prototype.welcome = function() {
-//       document.getElementById(`welcome`).innerHTML = `Welcome ${this.name}`!;
-//   }
-// }

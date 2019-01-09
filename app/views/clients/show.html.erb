@@ -6,12 +6,11 @@
 <h3>Shortcuts:</h3>
 <%= link_to 'Back to Roster', clients_path %><br>
 <% if session[:manager_id] %>
-<button id="Edit_Client">Edit Client</button><br>
+<%= link_to 'Edit_Client', edit_client_path(@client) %><br>
 <%= link_to 'Create Project', new_client_path(@client) , :class => "button" %><br>
 <%= link_to 'New Project', new_client_project_path(@client) %><br>
 <%end%>
 
-<button id="Create_Project">Create New Project</button>
   <div>
     <h4>Completed Projects:</h4>
       <ul>
