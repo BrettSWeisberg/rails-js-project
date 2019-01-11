@@ -23,6 +23,7 @@ class ManagersController < ApplicationController
   def show
     if session[:manager_id]
       @manager = Manager.find(params[:id])
+       @manager.clients.build
       respond_to do |format|
         format.html { render :show }
         format.json { render json: @manager }
