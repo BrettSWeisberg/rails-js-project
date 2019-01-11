@@ -13,7 +13,7 @@
 <%= project_fields.label :complete, 'Is the project complete?' %>
 <%= project_fields.select :completed, [['True', true], ['False', false]] %><br><br>
 <% end %>
-<%= f.submit %>
+<%= f.submit input_html: { id: 'create_client' } %>
 <% end %>
 
 <div class="fields_with_errors">
