@@ -1,6 +1,6 @@
 $(function () {
 	listenToForm();
-	listenToButton();
+//	listenToButton();
 })
 
 const base_url = 'http://localhost:3000/'
@@ -100,40 +100,40 @@ Manager.prototype.clientsHTML = function () {
 // 	})
 // }
 
-
-function getProjects(el){
-
-	let client = Number(el.dataset.client);
-
-		$.ajax({
-			url: location.href,
-			method: 'get',
-			dataType: 'JSON',
-			success: function (response) {
-			//	debugger
-				let myObj = response.projects;
-				for (x in myObj) {
-					if (myObj[x].client_id === client) {
-						document.getElementById(`projects_for_${client}`).innerHTML +=  `Project Name:` + myObj[x].name
-					}
-				}
-			}
-		})
-	}
-
-
-function listenToButton() {
-	$('#Create_Client').on('click', function (event) {
-		event.preventDefault();
-		createForm();
-	})
-}
-
-
-function createForm(){
-  document.getElementById("form").innerHTML = 'Name:<input id="text_field"></input><button id="create">Submit</button>';
-  $("#create").on('click', function(event) {
-    event.preventDefault();
-    createClient();
-})
-}
+//
+// function getProjects(el){
+//
+// 	let client = Number(el.dataset.client);
+//
+// 		$.ajax({
+// 			url: location.href,
+// 			method: 'get',
+// 			dataType: 'JSON',
+// 			success: function (response) {
+// 			//	debugger
+// 				let myObj = response.projects;
+// 				for (x in myObj) {
+// 					if (myObj[x].client_id === client) {
+// 						document.getElementById(`projects_for_${client}`).innerHTML +=  `Project Name:` + myObj[x].name
+// 					}
+// 				}
+// 			}
+// 		})
+// 	}
+//
+//
+// function listenToButton() {
+// 	$('#Create_Client').on('click', function (event) {
+// 		event.preventDefault();
+// 		createForm();
+// 	})
+// }
+//
+//
+// function createForm(){
+//   document.getElementById("form").innerHTML = 'Name:<input id="text_field"></input><button id="create">Submit</button>';
+//   $("#create").on('click', function(event) {
+//     event.preventDefault();
+//     createClient();
+// })
+// }
