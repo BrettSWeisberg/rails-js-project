@@ -1,24 +1,27 @@
-// $(function (){
-//    if($('body').is("#Client_Show")){
-//    listenToClientPage();
-//   }
-//  })
-//
-
-
-  $(function () {
-    $('form').submit(function(event) {
-      //prevent form from submitting the default way
-      event.preventDefault();
+$(function () {
+    $('#new_client').submit(function(event) {
+    event.preventDefault();  //prevent form from submitting the default way
+    url = this.action
+    data = {
+      'authenticity_token': $("input[name='authenticity_token']").val(),
+      'client':{
+          'name': $("#client_name").val(),
+          'project':{
+            'name': $("#client_projects_attributes_0_name").val(),
+            'manager_id': $("#client_projects_attributes_0_manager_id").val(),
+            'client_id': blanks,
+            'completed': $("#client_projects_attributes_0_completed").val()
+          }
+        }
+      };
       debugger
-      var values = $(this).serialize();
-
-      var posting = $.post('/posts', values);
-
-      posting.done(function(data) {
-        var post = data;
-        $("#postTitle").text(post["title"]);
-        $("#postBody").text(post["description"]);
-      });
-    });
-  });
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: data,
+          success: function(response){
+            debugger
+          }
+        })
+      })
+    })

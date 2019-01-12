@@ -20,13 +20,13 @@ function getClients() {
 		method: 'get',
 		dataType: 'JSON',
 		success: function (response) {
-
-			let manager = new Manager(response)
-			let clientsList = manager.clientsHTML() // feeds to the client prototype
-			$('ul#Show_Clients').html(clientsList)
-
-		//	listenClientButton()
-
+			if (response.clients[0].name === null && response.clients.length === 1){
+					$('ul#Show_Clients').html('<li>You have no clients</li>')
+			} else {
+					let manager = new Manager(response)
+					let clientsList = manager.clientsHTML() // feeds to the client prototype
+					$('ul#Show_Clients').html(clientsList)
+			}
 		}
 	})
 }
