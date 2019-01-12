@@ -9,12 +9,11 @@ $(function () {
           'project':{
             'name': $("#client_projects_attributes_0_name").val(),
             'manager_id': $("#client_projects_attributes_0_manager_id").val(),
-            'client_id': blanks,
             'completed': $("#client_projects_attributes_0_completed").val()
           }
         }
       };
-      debugger
+
         $.ajax({
           type: "POST",
           url: url,

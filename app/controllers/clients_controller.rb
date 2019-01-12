@@ -16,10 +16,15 @@ class ClientsController < ApplicationController
   end
 
   def create
+
     if session[:manager_id]
       @client = Client.new(client_params)
       if @client.save
-        #  redirect_to client_path(@client)
+        project = Project.new(client_id: @client.id, name: params["client"]["project"]["name"])
+        project.manager_id = params["client"]["project"]["manager_id"]
+        project.completed = params["client"]["project"]["completed"]
+        project.save
+        render json: @client
       else
           flash[:message] = "Client name needs to be unique and created with a project."
           redirect_to new_client_path
