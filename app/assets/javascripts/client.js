@@ -19,7 +19,9 @@ $(function () {
           url: url,
           data: data,
           success: function(response){
-            debugger
+          $('#JS-message').html(`<h3>${response.name} created!</h3>`),
+          $("#client_projects_attributes_0_name").empty(),
+          $("#client_name").empty()
           }
         })
       })

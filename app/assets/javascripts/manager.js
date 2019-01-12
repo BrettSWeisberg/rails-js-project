@@ -31,39 +31,6 @@ function getClients() {
 	})
 }
 
-// function listenClientButton() {
-// 	$('button.client-button').on('click', function (event) {
-// 		event.preventDefault()
-//
-//
-// 		let client_id = Number(this.id);
-// 		let manager_id = this.dataset.id;
-//
-// 		$.ajax({
-// 			url: base_url + `/clients/${client_id}`,
-// 			method: 'get',
-// 			dataType: 'json'
-// 		}).done(function (data) {
-//
-// 			console.log("data: ", data);
-// 			let client = new Client(data)
-// 			let projectsList = client.projectsHTML()
-// 			$(`#products_for_${client_id}`).html(projectsList)
-//
-//
-// 		})
-// 	})
-// }
-
-// class Client {
-// 	constructor(obj) {
-// 		this.name = obj.name
-// 		this.projects = obj.projects
-// 	}
-// }
-
-
-
 class Manager {
 	constructor(obj) {
 		this.id = obj.id
@@ -85,26 +52,12 @@ Manager.prototype.clientsHTML = function () {
 			`)
 	})
 }
-//
-// Manager.prototype.projectsHTML = function () {
-// 	debugger
-// 	let managerProjects = this.projects
-//
-// 	managerProjects.map((project, index) => {
-// 		return (`
-// 			< div >
-// 			<li>Client Name:${project.name}</li>
-// 			<button id=${project.id} class='project-button' onclick="getProjects(this)">Display Projects</button>
-// 			</div >
-// 			`)
-// 	})
-// }
 
-//
 function getProjects(el){
 
 	let client = Number(el.dataset.client);
 
+		$(`#projects_for_${client}`).empty(),
 		$.ajax({
 			url: location.href,
 			method: 'get',
@@ -120,20 +73,3 @@ function getProjects(el){
 			}
 		})
 	}
-
-//
-// function listenToButton() {
-// 	$('#Create_Client').on('click', function (event) {
-// 		event.preventDefault();
-// 		createForm();
-// 	})
-// }
-//
-//
-// function createForm(){
-//   document.getElementById("form").innerHTML = 'Name:<input id="text_field"></input><button id="create">Submit</button>';
-//   $("#create").on('click', function(event) {
-//     event.preventDefault();
-//     createClient();
-// })
-// }
