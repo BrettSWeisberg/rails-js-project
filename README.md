@@ -8,16 +8,17 @@ Framework: The site built with Rails and JavaScript.
 
 Features:
 
-Utilized the bcrypt gem and OAuth authentication with GitHub using OmniAuth to improve site security
+Utilized the bcrypt gem  improve site security
 Designed database schema and configured ActiveRecord associations using Rails
 Integrated browser cookies and sessions object to allow users to sign in and out
- Implemented AJAX requests to adjust to DOM to create a more seamless experience
+Implemented AJAX requests to adjust to DOM to create a more seamless experience
+
 Installation:
 
 Fork and clone the repo
 Update .env with GitHub developer information
-Run rake db:migrate
-Run rake db:seed
+Run rake db:dcms
+
 Start coding!
 
 Tests: There are currently no tests within the repo. All testing was done in the browser.
