@@ -14,4 +14,5 @@
 //= require bootstrap
 //= require manager
 //= require client
+//= require client_index
 //= require_tree .
