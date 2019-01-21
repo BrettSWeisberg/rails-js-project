@@ -13,17 +13,16 @@ The site is still a work in progress and future iterations will include a more b
 The site built with Rails and JavaScript.
 
 ## Features:
--Utilized the bcrypt gem to improve site security
--Designed database schema and configured ActiveRecord associations using Rails 
--Integrated browser cookies and sessions object to allow users to sign in and out 
--Implemented AJAX requests to adjust to DOM to create a more seamless experience
+- Utilized the bcrypt gem to improve site security
+- Designed database schema and configured ActiveRecord associations using Rails 
+- Integrated browser cookies and sessions object to allow users to sign in and out 
+- Implemented AJAX requests to adjust to DOM to create a more seamless experience
 
 ## Installation:
--Fork and clone the repo
--Update .env with GitHub developer information
--Run rake db:dcms
-
-Start coding!
+1. Fork and clone the repo
+2. Update .env with GitHub developer information
+3. Run rake db:dcms
+4. Start coding!
 
 ## Tests: 
 There are currently no tests within the repo. All testing was done in the browser.
