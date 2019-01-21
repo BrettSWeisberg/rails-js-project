@@ -1,7 +1,7 @@
 ## Project Name: rails-js-project
 
 ## Project Overview:
-Is a project management site specifically for a design studio that has many clients. Clients have many projects, both of which are assigned a manager who oversees them. This is the third iteration of the site, which has the most advanced code thus far, which includes JavaScript and APIs.
+This project a project management site specifically for a design studio that has many clients. Clients have many projects, both of which are assigned a manager who oversees them. This is the third iteration of the site, which has the most advanced code thus far, which includes JavaScript and APIs.
 
 ## Motivation: 
 Currently, the company that this site is designed for uses Excel files to manage their project management needs. The current situation will soon become unmanageable.
