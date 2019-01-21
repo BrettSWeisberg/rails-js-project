@@ -55,6 +55,18 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    if session[:manager_id]
+      @project = Project.find(params[:id])
+      @manager = Manager.find(session[:manager_id])
+      @project.destroy
+      redirect_to manager_path(@manager)
+    else
+      redirect_to '/'
+    end
+  end
+
+
 private
 
   def project_params

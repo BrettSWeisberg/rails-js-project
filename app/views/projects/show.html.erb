@@ -3,8 +3,10 @@
   <% if session[:manager_id] %>
   <%= link_to 'Edit Project', edit_project_path(@project) %>
   <%= link_to "Your Profile", manager_path(@project.manager) %>
+  <%= link_to 'Delete Project',  @project,  method: :delete %>
+
   <%end%>
-  
+
 
   <h1>Project Details:</h1>
     Project Name: <div id="project_name"><%= @project.name %></div><br>
