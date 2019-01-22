@@ -3,7 +3,7 @@
 <head>
   <% if session[:manager_id] %>
   <%= link_to "#{current_manager.name}'s Profile ", manager_path(current_manager) %>
-  <%= link_to  'Log Out', logout_path, method: :delete %>
+  <%= link_to "Log out",logout_path, :method => :delete %>
   <%end%>
   <%= link_to("Home", '/') unless current_page?('/') %>
 
