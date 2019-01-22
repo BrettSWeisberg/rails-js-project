@@ -1,2 +1,18 @@
 <h1>Edit Project Below:</h1>
-<%= render :partial =>'project' %>
+<%= form_for @project do |p| %>
+<%= p.label :name, 'Project Name:' %>
+<%= p.text_field :name %><br>
+
+<% if  current_page?('/projects/new') %>
+<%= p.label :client_id, 'Select Client:'  %><br>
+<%= p.collection_select :client_id, Client.all, :id, :name, include_blank: true %><br>
+<%else%>
+<%= p.label :client_id, 'Select Client:'  %>
+<%= p.collection_select :client_id, Client.all, :id, :name %><br>
+<%end%>
+<%= p.label :manager_id, 'Select Manager:'  %>
+<%= p.collection_select :manager_id, Manager.all, :id, :name, include_blank: true %><br>
+<%= p.label :complete, 'Is the project complete?' %>
+<%= p.select :completed, [['True', true], ['False', false]]  %><br><br>
+<%= p.submit %>
+<% end %>
