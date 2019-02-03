@@ -5,9 +5,7 @@ class SessionsController < ApplicationController
 
 
     def create
-
       if auth_hash = request.env['omniauth.auth'] # log in omniauth
-
          manager = Manager.find_or_create_by_omniauth(auth_hash)
         if manager.save
          session[:manager_id] = manager.id
@@ -16,7 +14,6 @@ class SessionsController < ApplicationController
           render 'sessions/new'
         end
       else
-
         @manager = Manager.find_by(email: params[:session][:email].downcase) #bcrypt login
           if @manager && @manager.authenticate(params[:session][:password])
               session[:manager_id] = @manager.id
